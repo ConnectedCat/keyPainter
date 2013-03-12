@@ -2,8 +2,7 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-	
-	ofBackground(255, 255, 255);
+    ofBackground(255, 255, 255);
 	ofSetWindowTitle("paint with your keyboard!!!");
 	cout << "Hello!";
 	randBack = false;
@@ -58,6 +57,7 @@ void testApp::setup(){
 		}
 	}
 
+
 }
 
 //--------------------------------------------------------------
@@ -108,27 +108,25 @@ void testApp::resetSequencer(){
 			squareSTOP[x][y] = false;
 			squareSLASH[x][y] = false;
 		}
-	}	
+	}
 	myDrawFrame.posX = 0;
 	myDrawFrame.posY = 0;
 }
 
+
 //--------------------------------------------------------------
 void testApp::update(){
-	
-	if (blackBack) {
+    if (blackBack) {
 		ofBackground(0, 0, 0);
 	}
 	else {
 		ofBackground(255, 255, 255);
 	}
-
-	
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
-	
+    
 	myDrawFrame.draw();
 	
 	if (randBack) {
@@ -137,13 +135,13 @@ void testApp::draw(){
 	}
 	else {
 		if (blackBack){
-				ofSetColor(255, 255, 255);
+            ofSetColor(255, 255, 255);
 		}
 		else {
-		ofSetColor(0, 0, 0);
+            ofSetColor(0, 0, 0);
 		}
 	}
-
+    
 	ofFill();
 	for(int x=0;x<4;x++){
 		for(int y=0;y<10;y++){
@@ -273,8 +271,7 @@ void testApp::draw(){
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
-	
-	if (key == OF_KEY_RETURN) {
+    if (key == OF_KEY_RETURN) {
 		randBack =! randBack;
 	}
 	
@@ -285,7 +282,7 @@ void testApp::keyPressed(int key){
 	if (key == OF_KEY_BACKSPACE) {
 		resetSequencer();
 	}
-		
+    
 	if (key == OF_KEY_LEFT) {
 		if (myDrawFrame.posX > 0) {
 			myDrawFrame.posX = myDrawFrame.posX - 200;
@@ -478,11 +475,11 @@ void testApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
-	
+
 }
 
 //--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y ){
+void testApp::mouseMoved(int x, int y){
 
 }
 
@@ -506,3 +503,12 @@ void testApp::windowResized(int w, int h){
 
 }
 
+//--------------------------------------------------------------
+void testApp::gotMessage(ofMessage msg){
+
+}
+
+//--------------------------------------------------------------
+void testApp::dragEvent(ofDragInfo dragInfo){ 
+
+}
